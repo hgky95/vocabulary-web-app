@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v2
         name: Checkout backend
         with:
-          repository: https://github.com/hgky95/vocabulary-api
+          repository: hgky95/vocabulary-api
           ref: master
           path: vocabulary-api
           token: ${{ secrets.REPO_ACCESS }}
