@@ -79,7 +79,7 @@
 <script>
 import axios from "axios";
 
-const HOST = "http://localhost:9090/api/dictionary";
+const HOST = "https://dictionary-webapp.herokuapp.com/api/dictionary";
 
 export default {
   data() {
