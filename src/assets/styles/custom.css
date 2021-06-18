@@ -99,3 +99,7 @@ span .phonetic .text {
   padding-left: 0.5rem;
   text-align: left;
 }
+
+.p-button.p-button-sm.margin-right {
+  margin-right: 0.5rem;
+}
