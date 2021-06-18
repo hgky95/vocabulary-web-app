@@ -40,7 +40,7 @@ jobs:
         name: Checkout backend
         with:
           repository: hgky95/vocabulary-api
-          ref: develop
+          ref: master
           path: vocabulary-api
           token: ${{ secrets.REPO_ACCESS }}
           clean: false
