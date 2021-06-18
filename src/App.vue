@@ -24,6 +24,7 @@
           <span v-for="phonetic in entry.phonetics" :key="phonetic.text">
             <span class="phonetic">
               <span class="text">{{ phonetic.text }}</span>
+              <Button @click="doCopy(phonetic.text)" icon="pi pi-copy" class="p-button-sm margin-right"></Button>
               <label class="padding-right">
                 <Button
                   v-on:click="playSound(phonetic.audio)"
@@ -78,6 +79,7 @@
 
 <script>
 import axios from "axios";
+import { copyText } from 'vue3-clipboard'
 
 const HOST = "https://dictionary-webapp.herokuapp.com/api/dictionary";
 
@@ -128,6 +130,13 @@ export default {
       var audio = new Audio(url);
       audio.play();
     },
+    doCopy(phoneticText) {
+        copyText(phoneticText, undefined, (error) => {
+          if (error) {
+            console.log(error)
+          }
+        })
+      }
   },
 };
 </script>
