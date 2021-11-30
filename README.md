@@ -1,4 +1,4 @@
-# english-api
+# vocabulary-web-app
 Demo:
 https://dictionary-webapp.herokuapp.com/
 
