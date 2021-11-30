@@ -1,6 +1,6 @@
 # english-api
 Demo:
-https://master.d3jopkb6li72e0.amplifyapp.com/
+https://dictionary-webapp.herokuapp.com/
 
 ## Project setup
 ```
