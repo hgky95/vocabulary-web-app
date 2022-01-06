@@ -121,7 +121,7 @@ export default {
           fileLink.click();
         })
         .catch((e) => {
-          alert("Can't found the word: " + this.word);
+          alert("Can't download the audio file: " + this.word);
           console.log("Error: " + e);
         });
     },
