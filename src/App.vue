@@ -26,7 +26,7 @@
               <span class="text">{{ phonetic.text }}</span>
               <Button @click="doCopy(phonetic.text)" icon="pi pi-copy" class="p-button-sm margin-right"></Button>
               <label class="padding-right">
-                <Button
+                <Button :disabled="!phonetic.audio.length"
                   v-on:click="playSound(phonetic.audio)"
                   icon="pi pi-volume-up"
                   class="p-button-sm padding-right"
@@ -34,7 +34,7 @@
                 </Button>
               </label>
               <label>
-                <Button
+                <Button :disabled="!phonetic.audio.length"
                   v-on:click="downloadMp3(phonetic.audio)"
                   icon="pi pi-download"
                   class="p-button-sm padding-left"
