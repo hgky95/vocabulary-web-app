@@ -26,20 +26,30 @@
               <span class="text">{{ phonetic.text }}</span>
               <Button @click="doCopy(phonetic.text)" icon="pi pi-copy" class="p-button-sm margin-right"></Button>
               <label class="padding-right">
-                <Button :disabled="!phonetic.audio.length"
+                <Button v-if="phonetic.audio.length"
                   v-on:click="playSound(phonetic.audio)"
                   icon="pi pi-volume-up"
                   class="p-button-sm padding-right"
                 >
                 </Button>
-              </label>
-              <label>
-                <Button :disabled="!phonetic.audio.length"
-                  v-on:click="downloadMp3(phonetic.audio)"
-                  icon="pi pi-download"
-                  class="p-button-sm padding-left"
+                <Button v-if="!phonetic.audio.length"
+                        v-on:click="playSound('https://ssl.gstatic.com/dictionary/static/sounds/oxford/' + entry.word + '--_us_1.mp3')"
+                        icon="pi pi-volume-up"
+                        class="p-button-sm padding-right"
                 >
                 </Button>
+              </label>
+              <label>
+                <Button v-if="phonetic.audio.length"
+                        v-on:click="downloadMp3(phonetic.audio)"
+                        icon="pi pi-download"
+                        class="p-button-sm padding-left"
+                />
+                <Button v-if="!phonetic.audio.length"
+                        v-on:click="downloadMp3('https://ssl.gstatic.com/dictionary/static/sounds/oxford/' + entry.word + '--_us_1.mp3')"
+                        icon="pi pi-download"
+                        class="p-button-sm padding-left"
+                />
               </label>
             </span>
           </span>
